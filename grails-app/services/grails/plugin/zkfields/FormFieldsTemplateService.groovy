@@ -16,12 +16,14 @@
 
 package grails.plugin.zkfields
 
+import static grails.util.Environment.DEVELOPMENT
+import static org.codehaus.groovy.grails.io.support.GrailsResourceUtils.appendPiecesForUri
+import grails.util.Environment
+import grails.util.GrailsNameUtils
+
 import org.codehaus.groovy.grails.plugins.GrailsPluginManager
 import org.codehaus.groovy.grails.web.pages.discovery.GrailsConventionGroovyPageLocator
 import org.springframework.web.context.request.RequestContextHolder
-import grails.util.*
-import static grails.util.Environment.DEVELOPMENT
-import static org.codehaus.groovy.grails.io.support.GrailsResourceUtils.appendPiecesForUri
 
 class FormFieldsTemplateService {
 
@@ -102,5 +104,4 @@ class FormFieldsTemplateService {
 	private static boolean shouldCache() {
 		Environment.current != DEVELOPMENT
 	}
-
 }

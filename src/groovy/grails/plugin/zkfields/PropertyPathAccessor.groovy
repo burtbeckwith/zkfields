@@ -1,12 +1,14 @@
 package grails.plugin.zkfields
 
-import grails.util.GrailsNameUtils
-import org.codehaus.groovy.grails.validation.ConstrainedProperty
-import org.springframework.validation.FieldError
 import static grails.plugin.zkfields.BeanPropertyAccessorFactory.stripIndex
 import static java.util.Collections.EMPTY_LIST
 import static org.apache.commons.lang.StringUtils.substringAfterLast
-import org.codehaus.groovy.grails.commons.*
+import grails.util.GrailsNameUtils
+
+import org.codehaus.groovy.grails.commons.GrailsDomainClass
+import org.codehaus.groovy.grails.commons.GrailsDomainClassProperty
+import org.codehaus.groovy.grails.validation.ConstrainedProperty
+import org.springframework.validation.FieldError
 
 class PropertyPathAccessor implements BeanPropertyAccessor {
 

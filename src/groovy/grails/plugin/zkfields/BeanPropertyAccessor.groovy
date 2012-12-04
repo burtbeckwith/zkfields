@@ -16,9 +16,10 @@
 
 package grails.plugin.zkfields
 
+import org.codehaus.groovy.grails.commons.GrailsDomainClass
+import org.codehaus.groovy.grails.commons.GrailsDomainClassProperty
 import org.codehaus.groovy.grails.validation.ConstrainedProperty
 import org.springframework.validation.FieldError
-import org.codehaus.groovy.grails.commons.*
 
 interface BeanPropertyAccessor {
 
@@ -106,5 +107,4 @@ interface BeanPropertyAccessor {
 	 * @return whether or not the property has any validation errors (i.e. `getErrors` will return a non-empty list). This will always be false for non-validateable types.
 	 */
 	boolean isInvalid()
-
 }

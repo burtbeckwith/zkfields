@@ -15,15 +15,13 @@
  */
 
 import grails.plugin.zkfields.BeanPropertyAccessorFactory
+
 import org.codehaus.groovy.grails.validation.ConstraintsEvaluator
 
 class ZkFieldsGrailsPlugin {
 
 	def version = '0.1.0'
-	def grailsVersion = '2.1 > *'
-	def dependsOn = [:]
-	def pluginExcludes = []
-
+	def grailsVersion = '2.0 > *'
 	def title = 'ZkFields Plugin'
 	def author = 'Raphael Alla'
 	def authorEmail = 'raphael@mitija.com'
@@ -40,5 +38,4 @@ class ZkFieldsGrailsPlugin {
 			proxyHandler = ref('proxyHandler')
 		}
 	}
-	
 }

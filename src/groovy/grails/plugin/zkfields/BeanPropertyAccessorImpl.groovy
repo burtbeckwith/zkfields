@@ -18,10 +18,12 @@ package grails.plugin.zkfields
 
 import grails.util.GrailsNameUtils
 import groovy.transform.Canonical
+
 import org.apache.commons.lang.ClassUtils
+import org.codehaus.groovy.grails.commons.GrailsDomainClass
+import org.codehaus.groovy.grails.commons.GrailsDomainClassProperty
 import org.codehaus.groovy.grails.validation.ConstrainedProperty
 import org.springframework.validation.FieldError
-import org.codehaus.groovy.grails.commons.*
 
 @Canonical(includes = 'beanType, propertyName, propertyType')
 class BeanPropertyAccessorImpl implements BeanPropertyAccessor {

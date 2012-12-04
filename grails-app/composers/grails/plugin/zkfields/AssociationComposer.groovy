@@ -1,10 +1,8 @@
 package grails.plugin.zkfields
 
+import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.zk.ui.Component
 import org.zkoss.zul.ListModelList
-
-import org.codehaus.groovy.grails.commons.ApplicationHolder
-import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
 
 class AssociationComposer {
     def afterCompose = { Component comp ->

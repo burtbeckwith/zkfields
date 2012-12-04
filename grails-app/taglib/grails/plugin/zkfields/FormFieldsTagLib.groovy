@@ -17,21 +17,22 @@
 
 package grails.plugin.zkfields
 
-import groovy.xml.MarkupBuilder
+import static grails.plugin.zkfields.FormFieldsTemplateService.toPropertyNameFormat
+import static org.codehaus.groovy.grails.commons.GrailsClassUtils.getStaticPropertyValue
+
 import org.apache.commons.lang.StringUtils
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.commons.GrailsDomainClass
+import org.codehaus.groovy.grails.commons.GrailsDomainClassProperty
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.codehaus.groovy.grails.scaffolding.DomainClassPropertyComparator
 import org.codehaus.groovy.grails.web.pages.GroovyPage
-import static FormFieldsTemplateService.toPropertyNameFormat
-import org.codehaus.groovy.grails.commons.*
-import static org.codehaus.groovy.grails.commons.GrailsClassUtils.getStaticPropertyValue
-
-import org.zkoss.zk.ui.event.*
-import org.zkoss.zul.*
+import org.zkoss.zul.Comboitem
+import org.zkoss.zul.ComboitemRenderer
 
 class FormFieldsTagLib implements GrailsApplicationAware {
 
-    static final namespace = 'zkf'
+    static final String namespace = 'zkf'
     static final String BEAN_PAGE_SCOPE_VARIABLE = 'f:with:bean'
     static final String PREFIX_PAGE_SCOPE_VARIABLE = 'f:with:prefix'
     static final String VIEWMODE_PAGE_SCOPE_VARIABLE = 'f:with:viewmode'
@@ -517,10 +518,6 @@ class FormFieldsTagLib implements GrailsApplicationAware {
         }
     }
 
-
-
-
-
     private String renderOneToManyInput(Map model, Map attrs) {
         def buffer = new StringBuilder()
         buffer << '<ul>'
@@ -537,5 +534,4 @@ class FormFieldsTagLib implements GrailsApplicationAware {
         buffer << g.link(controller: controllerName, action: "create", params: [("${model.beanClass.propertyName}.id".toString()): model.bean.id], addLabel)
         buffer as String
     }
-
 }
